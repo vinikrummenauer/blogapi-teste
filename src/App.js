@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios'
 import './App.css';
 
 function App() {
+
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    axios.get("https://api-fake-blog.herokuapp.com/postagens")
+    .then((response) => {
+        setPosts(response.data)
+    }).catch(() => {
+      console.log("deu errado")
+    })
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <div className="cards">
+
+      {posts.map((post, key) => {
+        return (
+          <div className="card" key={key}>
+            <div className="card-body">
+             <h1>{post.title}</h1>
+              <div className="line"></div>
+                    <h2>{post.description}</h2>
+               </div>
+            </div>
+        )
+      })}
+          </div>
+        </div>
   );
 }
 

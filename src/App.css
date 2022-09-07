@@ -1,38 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@700&family=Raleway:wght@500&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
 .App {
-  text-align: center;
+	min-height: 100vh;
+
+	padding: 7rem 0;
+	background-color: #f8f8f8;
+
+	display: flex;
+	justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card {
+	background-color: #fff;
+
+	border: 2px solid rgb(226, 226, 226);
+
+	padding: 40px 25px;
+
+	width: 100%;
+	max-width: 600px;
+
+	border-radius: 10px;
+
+	margin-bottom: 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card .card-body h1{
+	font-family: Heebo;
+	font-size: 2.6rem;
+	margin-bottom: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.line {
+	width: 100%;
+	height: 2px;
+
+	border: 1px solid rgb(218, 218, 218);
 }
 
-.App-link {
-  color: #61dafb;
-}
+.card .card-body h2{
+	font-family: Raleway;
+	font-size: 1.4rem;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	margin-top: 15px;
 }
